@@ -3,6 +3,8 @@ package com.yungnickyoung.minecraft.bettercaves.cubicchunks;
 import com.yungnickyoung.minecraft.bettercaves.noise.FastNoise;
 import com.yungnickyoung.minecraft.bettercaves.noise.NoiseTuple;
 import com.yungnickyoung.minecraft.bettercaves.util.BetterCaveUtil;
+import io.github.opencubicchunks.cubicchunks.api.util.CubePos;
+import io.github.opencubicchunks.cubicchunks.api.worldgen.CubePrimer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -98,7 +100,7 @@ public abstract class CubicChunksAbstractBC {
      * @param minSurfaceHeight This chunk's min surface height. Can be approximated using
      *                         BetterCaveUtil#getMinSurfaceHeight
      */
-    public abstract void generateColumn(int chunkX, int chunkZ, ChunkPrimer primer, int localX, int localZ, int bottomY,
+    public abstract void generateColumn(CubePos cubePos, CubePrimer cube, int localX, int localZ, int bottomY,
                                         int topY, int maxSurfaceHeight, int minSurfaceHeight, int surfaceCutoff,
                                         IBlockState lavaBlock);
 

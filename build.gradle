@@ -60,7 +60,7 @@ dependencies {
 
 //    deobfProvided 'io.github.opencubicchunks.cubicchunks-api:1.12.2-0.0.970.0-SNAPSHOT'
 
-    compile files("CubicChunks-1.12.2-0.0.970.0-SNAPSHOT-all.jar")
+    compile files("CubicChunks-1.12.2-0.0.1012.0-SNAPSHOT-all.jar")
 
 }
 

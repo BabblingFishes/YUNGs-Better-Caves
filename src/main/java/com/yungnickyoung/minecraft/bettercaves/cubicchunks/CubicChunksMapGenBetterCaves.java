@@ -10,6 +10,9 @@ import com.yungnickyoung.minecraft.bettercaves.world.bedrock.FlattenBedrock;
 import com.yungnickyoung.minecraft.bettercaves.world.cave.AbstractBC;
 import com.yungnickyoung.minecraft.bettercaves.world.cave.CaveBC;
 import com.yungnickyoung.minecraft.bettercaves.world.cave.CavernBC;
+import io.github.opencubicchunks.cubicchunks.api.util.CubePos;
+import io.github.opencubicchunks.cubicchunks.api.worldgen.CubePrimer;
+import io.github.opencubicchunks.cubicchunks.api.worldgen.structure.ICubicStructureGenerator;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -18,7 +21,9 @@ import net.minecraft.world.gen.MapGenCaves;
 
 import javax.annotation.Nonnull;
 
-public class CubicChunksMapGenBetterCaves extends MapGenCaves {
+public class CubicChunksMapGenBetterCaves implements ICubicStructureGenerator {
+    private World world;
+
     // Cave types
     private AbstractBC caveCubic;
     private AbstractBC caveSimplex;
@@ -59,7 +64,7 @@ public class CubicChunksMapGenBetterCaves extends MapGenCaves {
     }
 
     @Override
-    public void generate(World worldIn, int chunkX, int chunkZ, @Nonnull ChunkPrimer primer) {
+    public void generate(World worldIn, CubePrimer cube, CubePos cubePos) { //(World worldIn, int chunkX, int chunkZ, @Nonnull ChunkPrimer primer)
         if (world == null) { // First call - (lazy) initialization of all cave generators
             this.initialize(worldIn);
         }
